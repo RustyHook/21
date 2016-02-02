@@ -1,33 +1,33 @@
 import random
 
 
-maxScore = 100;
-gameScore = 0;
-roundScore = 0;
+maxScore = 100
+gameScore = 0
+roundScore = 0
 
-maxRounds = 5;
-roundCounter = 0;
+maxRounds = 5 
+roundCounter = 0 
 
 fullDeck = [["Ace", "Two", "Three", "Four", "Five", "Six", \
 	 "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"], \
-	[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]];
+	[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]] 
 
 deck = [["Ace", "Two", "Three", "Four", "Five", "Six", \
 	 "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"], \
-	[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]];
+	[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]] 
 
-cardCount = 12;
+cardCount = 12 
 
-card1 = 0;
-card2 = 0;
+card1 = 0 
+card2 = 0 
 
 choice = "a"
 decision = "a"
 
 def newGame():
 ##Reset the variables for a clear start of a new game
-	gameScore = 100;
-	roundCounter = 0;
+	gameScore = 100 
+	roundCounter = 0 
 	
 			
 	print ("Welcome to 21 !!! To start a new game press N to quit press Q...")
@@ -39,16 +39,16 @@ def newGame():
 			print ("")
 			break
 		elif choice == "Q" or choice == "q":
-			roundCounter = 5;
+			roundCounter = 5 
 			break
 		
 	print ("~~~~~~~~~~~~~~~~~~~~~~~~")
 
 
 	while roundCounter < maxRounds:
-		roundScore = 0; 
-		deck = [["Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]];
-		cardCount = 12;
+		roundScore = 0  
+		deck = [["Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]] 
+		cardCount = 12 
 		print ("~~~~~~~~~~~~~~~~~~~~~~~~")
 		print ("")
 		print ("Game score: " + str(gameScore) + " Round: " + str(roundCounter+1) + "/5  | press Q to exit")
@@ -65,7 +65,7 @@ def newGame():
 		del deck[1][draw2]
 		cardCount -= 1
 		
-		roundScore = card1 + card2;
+		roundScore = card1 + card2 
 		
 		print ("You have drawn: ")
 		print (deck[0][draw1])
@@ -115,7 +115,7 @@ def newGame():
 				print ("Good Bye ^_^ ")
 				roundCounter = 99
 				break
-		roundCounter += 1;
+		roundCounter += 1 
 	print ("~~~~~~~~~~~~~~~~~~~~~~~~")
 
 	if choice != "q" and choice != "Q" and roundCounter != 99:
@@ -138,7 +138,7 @@ def newGame():
 	
 	return
 	
-newGame();
+newGame() 
 
 while True:
 	if choice == "Q" or choice == "q" or decision == "q" or decision == "Q":
@@ -147,7 +147,7 @@ while True:
 
 	new_game = input("Do you want to play another one? [Y/N]")
 	if new_game == "Y" or new_game == "y":
-		newGame();
+		newGame() 
 	elif new_game == "N" or new_game == "n":
 		print ("Good Bye ^_^")
-		break;	
+		break 	
