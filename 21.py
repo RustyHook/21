@@ -36,16 +36,22 @@ def newGame():
 	card2 = deck[1][draw2]
 	del deck[1][draw2]
 	
+	roundScore = card1 + card2;
+	
 	print ("You have drawn: " + deck[0][draw1] + " and " + deck[0][draw2])
-	print ("Your current score is: " + str(card1+card2)) 
+	print ("Your current score is: " + str(roundScore)) 
 	decision = input("Do you want to draw another card?(Otherwise round will end) [y/n]")
 	
-	if decision == y || decision == Y:
-		draw = random.randint(1,11)
-		card3 = deck[1][draw]
-		del deck[1][draw]
-		print ("You have drawn: " + deck[0][draw])
-		print ("Your current score is: " +str(card1+card2+card))
+	while True:
+		if decision == "y" or decision == "Y":
+			draw = random.randint(1,11)
+			card3 = deck[1][draw]
+			del deck[1][draw]
+			roundScore += card3
+			print ("You have drawn: " + deck[0][draw])
+			print ("Your current score is: " +str(roundScore))
+			
+			
 		
 	return
 	
