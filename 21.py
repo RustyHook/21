@@ -140,13 +140,13 @@ print ("~~~~~~~~~~~~~~~~~~~~~~~~")
 newGame() 
 
 while True:
-	if choice == "Q" or choice == "q" or decision == "q" or decision == "Q":
+	if decision == "q":
 		break	
 	print ("")
 
-	new_game = input("Do you want to play another one? [Y/N]")
-	if new_game == "Y" or new_game == "y":
+	new_game = input("Do you want to play another one? [Y/N]").lower()
+	if new_game == "y":
 		newGame() 
-	elif new_game == "N" or new_game == "n":
+	elif new_game == "n":
 		print ("Good Bye ^_^")
 		break 	
