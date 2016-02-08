@@ -1,6 +1,7 @@
 import random
 
-
+#There are two types of scores: the game score and the round score
+#The game score will begin at 100, and the game will last for five rounds
 maxScore = 100
 gameScore = 0
 roundScore = 0
@@ -8,10 +9,7 @@ roundScore = 0
 maxRounds = 5 
 roundCounter = 0 
 
-fullDeck = [["Ace", "Two", "Three", "Four", "Five", "Six", \
-	 "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"], \
-	[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]] 
-
+#Card values and their names(for displaying purposes)
 deck = [["Ace", "Two", "Three", "Four", "Five", "Six", \
 	 "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"], \
 	[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]] 
@@ -21,8 +19,8 @@ cardCount = 12
 card1 = 0 
 card2 = 0 
 
-choice = "a"
-decision = "a"
+choice = ""
+decision = ""
 
 def newGame():
 ##Reset the variables for a clear start of a new game
@@ -30,19 +28,17 @@ def newGame():
 	roundCounter = 0 
 	
 			
-	print ("Welcome to 21 !!! To start a new game press N to quit press Q...")
-	while True:
-		choice = input(": ")
-		if choice == "N" or choice == "n":
-			print ("")
-			print ("Good Luck!!!")
-			print ("")
-			break
-		elif choice == "Q" or choice == "q":
-			roundCounter = 5 
-			break
-		
-	print ("~~~~~~~~~~~~~~~~~~~~~~~~")
+	#while True:
+	#	choice = input(": ").lower
+	#	if choice == "n":
+	#		print ("")
+	#		print ("Good Luck!!!")
+	#		print ("")
+	#		break
+	#	elif choice == "Q" or choice == "q":
+	#		roundCounter = 5 
+	#		break
+	#	
 
 
 	while roundCounter < maxRounds:
@@ -81,8 +77,8 @@ def newGame():
 		
 		while True:
 			print ("")
-			decision = input("Do you want to draw another card?(Otherwise round will end) [y/n]")
-			if decision == "y" or decision == "Y":
+			decision = input("Do you want to draw another card?(Otherwise round will end) [y/n]").lower()
+			if decision == "y":
 				draw = random.randint(1,cardCount)
 				card = deck[1][draw]
 				del deck[1][draw]
@@ -105,7 +101,7 @@ def newGame():
 					print ("Blackjack!!! Perfect!!! -0pts")
 					break 
 				
-			elif decision == "n" or decision == "N":
+			elif decision == "n":
 				gameScore -= 21-roundScore
 				print ("")
 				print ("Round " + str(roundCounter+1) + " is over! Your current game score is: " + str(gameScore))
@@ -137,6 +133,9 @@ def newGame():
 		print ("Git gud!!!")
 	
 	return
+
+print ("Welcome to 21 !!!")
+print ("~~~~~~~~~~~~~~~~~~~~~~~~")
 	
 newGame() 
 
