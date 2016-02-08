@@ -57,7 +57,7 @@ def newGame():
 		cardCount = 12 
 		print ("~~~~~~~~~~~~~~~~~~~~~~~~")
 		print ("")
-		print ("Game score: " + str(gameScore) + " Round: " + str(roundCounter+1) + "/5  | press Q to exit")
+		print ("Game score: " + str(gameScore) + " Round: " + str(roundCounter+1) + "/5  | press Q to quit current game")
 		print ("")
 
 	##Draw the first two cards and remove them from the deck
