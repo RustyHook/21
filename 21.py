@@ -1,4 +1,28 @@
+#####################################################
+#####################################################
+# One of the ways to solve "21" from 
+# Beginner-Projects by jrgz
+# https://github.com/jrgz/Beginner-Projects
+# 
+# sub-goals included*
+#
+# Funcs: newGame() - line48
+#
+#
+#
+# 
+# *TODO: -add full deck(add colors)
+#
+#
+# Author: RustyHook
+# Date: 08/02/2016
+#####################################################
+#####################################################
+
 import random
+
+
+##Values
 
 #There are two types of scores: the game score and the round score
 #The game score will begin at 100, and the game will last for five rounds
@@ -19,7 +43,6 @@ cardCount = 12
 card1 = 0 
 card2 = 0 
 
-choice = ""
 decision = ""
 
 def newGame():
@@ -28,19 +51,6 @@ def newGame():
 	roundCounter = 0 
 	
 			
-	#while True:
-	#	choice = input(": ").lower
-	#	if choice == "n":
-	#		print ("")
-	#		print ("Good Luck!!!")
-	#		print ("")
-	#		break
-	#	elif choice == "Q" or choice == "q":
-	#		roundCounter = 5 
-	#		break
-	#	
-
-
 	while roundCounter < maxRounds:
 		roundScore = 0  
 		deck = [["Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]] 
@@ -107,16 +117,19 @@ def newGame():
 				print ("Round " + str(roundCounter+1) + " is over! Your current game score is: " + str(gameScore))
 				print ("")
 				break
-			elif decision == "q" or decision == "Q":
+			elif decision == "q":
 				print ("Good Bye ^_^ ")
-				roundCounter = 99
+				roundCounter = 98
 				break
-		roundCounter += 1 
+		roundCounter += 1
+
+
 	print ("~~~~~~~~~~~~~~~~~~~~~~~~")
 
-	if choice != "q" and choice != "Q" and roundCounter != 99:
+	if roundCounter != 99:
 		print ("Your final score is: " + str(gameScore))
 
+        #Ranking system
 	if gameScore >= 90 and gameScore < 100:
 		print ("Your rank: A")
 	elif gameScore >= 80 and gameScore < 90:
@@ -134,11 +147,15 @@ def newGame():
 	
 	return
 
+##BEGIN
+
+#Header
 print ("Welcome to 21 !!!")
 print ("~~~~~~~~~~~~~~~~~~~~~~~~")
 	
 newGame() 
 
+#Loop to allow user to play as many games as he wants
 while True:
 	if decision == "q":
 		break	
